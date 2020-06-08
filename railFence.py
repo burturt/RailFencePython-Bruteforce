@@ -5,24 +5,23 @@ def offset(even, rails, rail):
     if even:
         return 2 * rail
     else:
-        return 2*(rails - 1 - rail)
+        return 2 * (rails - 1 - rail)
 
 
-
-def decryptRailFence(encrypted, rails, showOff = 0):
+def decryptRailFence(encrypted, rails, showOff=0):
     array = [[" " for col in range(len(encrypted))] for row in range(rails)]
     read = 0
-    
-    #build our fence
+
+    # build our fence
     for rail in range(rails):
         pos = offset(1, rails, rail)
         even = 0;
-        
+
         if rail == 0:
             pos = 0
         else:
             pos = int(pos / 2)
-        
+
         while pos < len(encrypted):
             if read == len(encrypted):
                 break
@@ -33,13 +32,12 @@ def decryptRailFence(encrypted, rails, showOff = 0):
             pos = pos + offset(even, rails, rail)
             even = not even
 
-
     if showOff:
-        #hooray, done! show our handy work
+        # hooray, done! show our handy work
         for row in array:
             print row
 
-    #now return the decoded message
+    # now return the decoded message
     decoded = ""
 
     for x in range(len(encrypted)):
@@ -47,4 +45,5 @@ def decryptRailFence(encrypted, rails, showOff = 0):
             if array[y][x] != " ":
                 decoded += array[y][x]
 
+    decoded = decoded.replace("%"," ")
     return decoded
