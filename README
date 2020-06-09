@@ -1,5 +1,5 @@
 # Rail Fence Python #
 
-This is a Python script designed to bruteforce decrypt a message encrypted with Rail Fence cipher.
+This is a Python script designed to bruteforce decrypt a message encrypted with Rail Fence cipher by varying the rail count and offset.
 
 `python testRailFence.py "ENCRYPTED STUFF"` (this is a python2 script)
