@@ -14,13 +14,10 @@ if len(sys.argv) != 2:
 ciphertext = sys.argv[1]
 print("-----------------------------")
 ciphertext = ciphertext.replace(" ", "%")
-print "Brute forcing all rails and offsets:"
+print "Brute forcing all rails:"
 
 
 print(rails)
-print(offsets)
 for i in rails:
-    for j in offsets:
-        tempciphertext = "*" * j + ciphertext
-        print decryptRailFence(tempciphertext, i, 0).replace("*", "").replace("%", " ")
+    print decryptRailFence(ciphertext, i, 0)replace("%", " ")
 
