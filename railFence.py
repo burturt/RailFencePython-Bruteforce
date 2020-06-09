@@ -45,5 +45,4 @@ def decryptRailFence(encrypted, rails, showOff=0):
             if array[y][x] != " ":
                 decoded += array[y][x]
 
-    decoded = decoded.replace("%"," ")
     return decoded
